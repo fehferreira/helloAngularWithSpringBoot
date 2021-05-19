@@ -13,6 +13,7 @@ export class Employee{
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpClientService {
 
   constructor(
@@ -23,6 +24,4 @@ export class HttpClientService {
     console.log("test call");
     return this.httpClient.get<Employee[]>('http://localhost:8080/employees');
   }
-
-
 }

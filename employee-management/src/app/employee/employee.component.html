@@ -1,1 +1,13 @@
-<p>employee works!</p>
+<table border="1">
+  <tr>
+    <th>name</th>
+    <th>description</th>
+  </tr>
+
+  <tbody *ngFor="let employee of employees">
+    <th>{{employee.name}}</th>
+    <th>{{employee.description}}</th>
+  </tbody>
+
+
+</table>

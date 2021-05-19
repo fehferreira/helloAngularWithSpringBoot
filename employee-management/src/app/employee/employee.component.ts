@@ -1,3 +1,4 @@
+import { HttpClientService } from './../service/http-client.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor() { }
+  employees: string[];
+
+  constructor(
+    private httpClientService: HttpClientService
+  ) { }
 
   ngOnInit(): void {
+    this.httpClientService.getEmployees().subscribe(
+      response => this.handleSucessfulResponse(response)
+    );
+  }
+
+  handleSucessfulResponse(response){
+    this.employees = response;
   }
 
 }
